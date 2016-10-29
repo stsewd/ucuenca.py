@@ -1,10 +1,13 @@
-import json
 import time
 import requests
+
+# TODO: html parser for status requests
+# TODO: upload to pypi
 
 BASE_URL = "http://evaluacion.ucuenca.edu.ec/ucuenca-rest-ws/api/v1/"
 MAX_RETRIES = 10
 DELAY = 0.5
+
 
 class UcuencaException(Exception):
     def __init__(self, status_code, msg):
@@ -85,5 +88,20 @@ class Ucuenca:
             params={'idEstudiante': student_id}
         )
 
+    def notes(self, student_id, career_id, period_id):
+        """Returns the notes of a student given an id, career, and perdiod."""
+        return self._get(
+            service_name='registroacademico/notas',
+            params={
+                'idEstudiante': student_id,
+                'idCarrera': career_id,
+                'idPerlec': period_id
+            }
+        )
+
+    def schedule(self, student_id):
+        """Returns the current schedule of a student given an id."""
+        return self._get(
+            service_name='horarios',
             params={'idEstudiante': student_id}
         )
