@@ -21,6 +21,7 @@ class Ucuenca:
 
     def __init__(self, token=None):
         self.token = token
+        self.lowercase_keys = False
 
     def _get(self, url, params=None):
         retries = Ucuenca.max_retries
@@ -52,7 +53,10 @@ class Ucuenca:
         return "{}{}".format(Ucuenca.base_url, field)
 
     def _parse_response(self, response):
-        return response.json()
+        result = response.json()[0]
+        if self.lowercase_keys:
+            result = {k.lower(): v for k, v in result.items()}
+        return result
 
     def academic_record(self, student_id):
         url = self._get_url('registroacademico')
