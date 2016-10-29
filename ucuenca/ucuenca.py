@@ -35,7 +35,7 @@ class Ucuenca:
                     raise e
             except Exception:
                 if retries == 1:
-                    raise UcuencaException(0, "Unknow error.")
+                    raise UcuencaException(1, "Unknow error.")
             retries -= 1
             time.sleep(delay)
             delay += 0.5
@@ -53,9 +53,13 @@ class Ucuenca:
         return "{}{}".format(Ucuenca.base_url, field)
 
     def _parse_response(self, response):
-        result = response.json()[0]
-        if self.lowercase_keys:
-            result = {k.lower(): v for k, v in result.items()}
+        headers = response.headers
+        if 'json' in headers['content-type']:
+            result = response.json()[0]
+            if self.lowercase_keys:
+                result = {k.lower(): v for k, v in result.items()}
+        else:
+            raise UcuencaException(2, "Unknow response.")
         return result
 
     def academic_record(self, student_id):
