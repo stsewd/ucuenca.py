@@ -23,7 +23,18 @@ class Ucuenca:
         self.token = token
         self.lowercase_keys = lowercase_keys
 
-    def _get(self, url, params=None):
+    def _get(self, service_name, params=None):
+        url = self._get_url(service_name)
+        response = self._request(
+            url,
+            params
+        )
+        return self._parse_response(response)
+
+    def _get_url(self, field):
+        return "{}{}".format(BASE_URL, field)
+
+    def _request(self, url, params=None):
         retries = MAX_RETRIES
         delay = DELAY
 
@@ -49,9 +60,6 @@ class Ucuenca:
             raise UcuencaException(404, "Resource not found.")
         return response
 
-    def _get_url(self, field):
-        return "{}{}".format(BASE_URL, field)
-
     def _parse_response(self, response):
         headers = response.headers
         if 'json' in headers['content-type']:
@@ -71,12 +79,11 @@ class Ucuenca:
         }
 
     def careers(self, student_id):
-        ''' returns the careers of a student given the id.
-        '''
-
-        url = self._get_url('registroacademico')
-        response = self._get(
-            url,
+        """Returns the careers that a student has taken given an id."""
+        return self._get(
+            service_name='registroacademico',
             params={'idEstudiante': student_id}
         )
-        return self._parse_response(response)
+
+            params={'idEstudiante': student_id}
+        )
