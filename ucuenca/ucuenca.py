@@ -2,6 +2,9 @@ import json
 import time
 import requests
 
+BASE_URL = "http://evaluacion.ucuenca.edu.ec/ucuenca-rest-ws/api/v1/"
+MAX_RETRIES = 10
+DELAY = 0.5
 
 class UcuencaException(Exception):
     def __init__(self, status_code, msg):
@@ -16,16 +19,13 @@ class UcuencaException(Exception):
 
 
 class Ucuenca:
-    base_url = "http://evaluacion.ucuenca.edu.ec/ucuenca-rest-ws/api/v1/"
-    max_retries = 10
-
-    def __init__(self, token=None):
+    def __init__(self, token=None, lowercase_keys=False):
         self.token = token
-        self.lowercase_keys = False
+        self.lowercase_keys = lowercase_keys
 
     def _get(self, url, params=None):
-        retries = Ucuenca.max_retries
-        delay = 0.5
+        retries = MAX_RETRIES
+        delay = DELAY
 
         while retries:
             try:
@@ -38,31 +38,42 @@ class Ucuenca:
                     raise UcuencaException(1, "Unknow error.")
             retries -= 1
             time.sleep(delay)
-            delay += 0.5
+            delay += DELAY
 
     def _get_response(self, url, params):
         response = requests.get(url, params)
         status_code = response.status_code
         if status_code != 200:
             raise UcuencaException(status_code, "Error")
-        elif not response.json():
+        elif status_code == 404:
             raise UcuencaException(404, "Resource not found.")
         return response
 
     def _get_url(self, field):
-        return "{}{}".format(Ucuenca.base_url, field)
+        return "{}{}".format(BASE_URL, field)
 
     def _parse_response(self, response):
         headers = response.headers
         if 'json' in headers['content-type']:
-            result = response.json()[0]
+            result = response.json()
+            result = None if not result else result[0]
             if self.lowercase_keys:
-                result = {k.lower(): v for k, v in result.items()}
+                result = self._keys_to_lower_case(result)
         else:
             raise UcuencaException(2, "Unknow response.")
         return result
 
-    def academic_record(self, student_id):
+    @staticmethod
+    def _keys_to_lower_case(dictionary):
+        return {
+            k.lower(): v
+            for k, v in dictionary.items()
+        }
+
+    def careers(self, student_id):
+        ''' returns the careers of a student given the id.
+        '''
+
         url = self._get_url('registroacademico')
         response = self._get(
             url,
