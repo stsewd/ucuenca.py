@@ -1,4 +1,5 @@
 import time
+import html
 import requests
 
 # TODO: html parser for status requests
@@ -21,9 +22,10 @@ class UcuencaException(Exception):
 
 
 class Ucuenca:
-    def __init__(self, token=None, lowercase_keys=False):
+    def __init__(self, token=None, lowercase_keys=True, unescape_html=True):
         self.token = token
         self.lowercase_keys = lowercase_keys
+        self.unescape_html = unescape_html
 
     def _get(self, service_name, params=None):
         url = self._get_url(service_name)
@@ -66,21 +68,45 @@ class Ucuenca:
         headers = response.headers
         if 'json' in headers['content-type']:
             result = response.json()
+            if self.unescape_html:
+                result = Ucuenca._unescape_html(result)
             if self.lowercase_keys:
-                result = [
-                    self._keys_to_lower_case(r)
-                    for r in result
-                ]
+                result = Ucuenca._keys_to_lower_case(result)
         else:
             raise UcuencaException(2, "Unknow response.")
         return result
 
     @staticmethod
-    def _keys_to_lower_case(dictionary):
-        return {
-            k.lower(): v
-            for k, v in dictionary.items()
-        }
+    def _unescape_html(element):
+        if isinstance(element, dict):
+            return {
+                k: Ucuenca._unescape_html(v)
+                for k, v in element.items()
+            }
+        elif isinstance(element, list):
+            return [
+                Ucuenca._unescape_html(e)
+                for e in element
+            ]
+        elif isinstance(element, str):
+            return html.unescape(element)
+        else:
+            return element
+
+    @staticmethod
+    def _keys_to_lower_case(element):
+        if isinstance(element, dict):
+            return {
+                k.lower(): Ucuenca._keys_to_lower_case(v)
+                for k, v in element.items()
+            }
+        elif isinstance(element, list):
+            return [
+                Ucuenca._keys_to_lower_case(e)
+                for e in element
+            ]
+        else:
+            return element
 
     def careers(self, student_id):
         """Returns the careers that a student has taken given an id."""
