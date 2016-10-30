@@ -69,21 +69,29 @@ class Ucuenca:
         if 'json' in headers['content-type']:
             result = response.json()
             if self.unescape_html:
-                result = [
-                    self._unescape_html(r)
-                    for r in result
-                ]
+                result = Ucuenca._unescape_html(result)
             if self.lowercase_keys:
                 result = Ucuenca._keys_to_lower_case(result)
         else:
             raise UcuencaException(2, "Unknow response.")
         return result
 
-    def _unescape_html(self, dictionary):
-        return {
-            k: html.unescape(v) if isinstance(v, str) else v
-            for k, v in dictionary.items()
-        }
+    @staticmethod
+    def _unescape_html(element):
+        if isinstance(element, dict):
+            return {
+                k: Ucuenca._unescape_html(v)
+                for k, v in element.items()
+            }
+        elif isinstance(element, list):
+            return [
+                Ucuenca._unescape_html(e)
+                for e in element
+            ]
+        elif isinstance(element, str):
+            return html.unescape(element)
+        else:
+            return element
 
     @staticmethod
     def _keys_to_lower_case(element):
