@@ -2,7 +2,6 @@ import time
 import requests
 
 # TODO: html parser for status requests
-# TODO: upload to pypi
 
 BASE_URL = "http://evaluacion.ucuenca.edu.ec/ucuenca-rest-ws/api/v1/"
 MAX_RETRIES = 6
@@ -124,7 +123,7 @@ class Ucuenca:
         )
         return None if not response else response
 
-    # Only use if you have a very good reason to do it.
+    # Only use if you have a very good reason to do so.
     def authentication(self, user, passw):
         """Returns basic information about an user if the password matches."""
         response = self._get(
