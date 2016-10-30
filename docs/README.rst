@@ -1,7 +1,7 @@
 ucuenca.py
 ==========
 
-|Build Status|
+|Build Status| |PyPI version|
 
 Descripción
 -----------
@@ -52,3 +52,5 @@ Inicio Rápido
 
 .. |Build Status| image:: https://travis-ci.com/stsewd/ucuenca.py.svg?token=tZwnW7qE7enKf3J5KbrM&branch=master
    :target: https://travis-ci.com/stsewd/ucuenca.py
+.. |PyPI version| image:: https://badge.fury.io/py/ucuenca.svg
+   :target: https://badge.fury.io/py/ucuenca
