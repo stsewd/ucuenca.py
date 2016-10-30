@@ -9,5 +9,5 @@ doc:
 	pandoc -o docs/README.rst README.md
 
 clean:
-	rm -f -r docs/*
 	python3 setup.py clean --all
+	rm -f -r docs/*
