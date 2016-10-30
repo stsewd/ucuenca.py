@@ -1,16 +1,17 @@
 PYTHON = python
 TEST_RUNNER = unittest
-FLAGS = -v
+TEST_FLAGS = -v
+
 
 test:
-	$(PYTHON) -m $(TEST_RUNNER) $(FLAGS)
+	$(PYTHON) -m $(TEST_RUNNER) $(TEST_FLAGS)
 
 doc:
 	pandoc -o docs/README.rst README.md
 
 clean:
-	python3 setup.py clean --all
+	$(PYTHON) setup.py clean --all
 	rm -f -r docs/*
 
 pypi:
-	python3 setup.py sdist upload
+	$(PYTHON) setup.py sdist upload
