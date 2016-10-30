@@ -5,7 +5,7 @@ import requests
 # TODO: upload to pypi
 
 BASE_URL = "http://evaluacion.ucuenca.edu.ec/ucuenca-rest-ws/api/v1/"
-MAX_RETRIES = 10
+MAX_RETRIES = 6
 DELAY = 0.5
 
 
