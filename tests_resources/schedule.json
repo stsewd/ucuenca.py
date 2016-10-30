@@ -1,96 +1,96 @@
 [{
-    "ARQUITECTURA": [{
-        "HORA_FIN": "13:00",
-        "NOMBRE_DOCENTE": "MARIA SOLEDAD MOSCOSO CORDERO",
-        "ASIGNATURA": "TALLER INTEGRAL 2 OPCION RESTAURACION",
-        "COD_GRUPO": 1,
-        "DIA": 1,
-        "HORA_INICIO": "11:00"
+    "arquitectura": [{
+        "hora_fin": "13:00",
+        "nombre_docente": "MARIA SOLEDAD MOSCOSO CORDERO",
+        "asignatura": "TALLER INTEGRAL 2 OPCION RESTAURACION",
+        "cod_grupo": 1,
+        "dia": 1,
+        "hora_inicio": "11:00"
     }, {
-        "HORA_FIN": "11:00",
-        "NOMBRE_DOCENTE": "JAIME SEBASTIAN ASTUDILLO CORDERO",
-        "ASIGNATURA": "TALLER INTEGRAL 2 OPCION RESTAURACION",
-        "COD_GRUPO": 1,
-        "DIA": 1,
-        "HORA_INICIO": "09:00"
+        "hora_fin": "11:00",
+        "nombre_docente": "JAIME SEBASTIAN ASTUDILLO CORDERO",
+        "asignatura": "TALLER INTEGRAL 2 OPCION RESTAURACION",
+        "cod_grupo": 1,
+        "dia": 1,
+        "hora_inicio": "09:00"
     }, {
-        "HORA_FIN": "12:00",
-        "NOMBRE_DOCENTE": "MARIA SOLEDAD MOSCOSO CORDERO",
-        "ASIGNATURA": "TALLER INTEGRAL 2 OPCION RESTAURACION",
-        "COD_GRUPO": 1,
-        "DIA": 2,
-        "HORA_INICIO": "10:00"
+        "hora_fin": "12:00",
+        "nombre_docente": "MARIA SOLEDAD MOSCOSO CORDERO",
+        "asignatura": "TALLER INTEGRAL 2 OPCION RESTAURACION",
+        "cod_grupo": 1,
+        "dia": 2,
+        "hora_inicio": "10:00"
     }, {
-        "HORA_FIN": "10:00",
-        "NOMBRE_DOCENTE": "JAIME SEBASTIAN ASTUDILLO CORDERO",
-        "ASIGNATURA": "TALLER INTEGRAL 2 OPCION RESTAURACION",
-        "COD_GRUPO": 1,
-        "DIA": 2,
-        "HORA_INICIO": "08:00"
+        "hora_fin": "10:00",
+        "nombre_docente": "JAIME SEBASTIAN ASTUDILLO CORDERO",
+        "asignatura": "TALLER INTEGRAL 2 OPCION RESTAURACION",
+        "cod_grupo": 1,
+        "dia": 2,
+        "hora_inicio": "08:00"
     }, {
-        "HORA_FIN": "11:00",
-        "NOMBRE_DOCENTE": "JAIME SEBASTIAN ASTUDILLO CORDERO",
-        "ASIGNATURA": "TALLER INTEGRAL 2 OPCION RESTAURACION",
-        "COD_GRUPO": 1,
-        "DIA": 3,
-        "HORA_INICIO": "09:00"
+        "hora_fin": "11:00",
+        "nombre_docente": "JAIME SEBASTIAN ASTUDILLO CORDERO",
+        "asignatura": "TALLER INTEGRAL 2 OPCION RESTAURACION",
+        "cod_grupo": 1,
+        "dia": 3,
+        "hora_inicio": "09:00"
     }, {
-        "HORA_FIN": "11:00",
-        "NOMBRE_DOCENTE": "FAUSTO ADRIAN  CARDOSO MARTINEZ ",
-        "ASIGNATURA": "TALLER INTEGRAL 2 OPCION RESTAURACION",
-        "COD_GRUPO": 1,
-        "DIA": 3,
-        "HORA_INICIO": "09:00"
+        "hora_fin": "11:00",
+        "nombre_docente": "FAUSTO ADRIAN  CARDOSO MARTINEZ ",
+        "asignatura": "TALLER INTEGRAL 2 OPCION RESTAURACION",
+        "cod_grupo": 1,
+        "dia": 3,
+        "hora_inicio": "09:00"
     }, {
-        "HORA_FIN": "11:00",
-        "NOMBRE_DOCENTE": "MARIA SOLEDAD MOSCOSO CORDERO",
-        "ASIGNATURA": "TALLER INTEGRAL 2 OPCION RESTAURACION",
-        "COD_GRUPO": 1,
-        "DIA": 3,
-        "HORA_INICIO": "09:00"
+        "hora_fin": "11:00",
+        "nombre_docente": "MARIA SOLEDAD MOSCOSO CORDERO",
+        "asignatura": "TALLER INTEGRAL 2 OPCION RESTAURACION",
+        "cod_grupo": 1,
+        "dia": 3,
+        "hora_inicio": "09:00"
     }, {
-        "HORA_FIN": "11:00",
-        "NOMBRE_DOCENTE": "FAUSTO ADRIAN  CARDOSO MARTINEZ ",
-        "ASIGNATURA": "TALLER INTEGRAL 2 OPCION RESTAURACION",
-        "COD_GRUPO": 1,
-        "DIA": 4,
-        "HORA_INICIO": "09:00"
+        "hora_fin": "11:00",
+        "nombre_docente": "FAUSTO ADRIAN  CARDOSO MARTINEZ ",
+        "asignatura": "TALLER INTEGRAL 2 OPCION RESTAURACION",
+        "cod_grupo": 1,
+        "dia": 4,
+        "hora_inicio": "09:00"
     }, {
-        "HORA_FIN": "11:00",
-        "NOMBRE_DOCENTE": "MARIA SOLEDAD MOSCOSO CORDERO",
-        "ASIGNATURA": "TALLER INTEGRAL 2 OPCION RESTAURACION",
-        "COD_GRUPO": 1,
-        "DIA": 5,
-        "HORA_INICIO": "09:00"
+        "hora_fin": "11:00",
+        "nombre_docente": "MARIA SOLEDAD MOSCOSO CORDERO",
+        "asignatura": "TALLER INTEGRAL 2 OPCION RESTAURACION",
+        "cod_grupo": 1,
+        "dia": 5,
+        "hora_inicio": "09:00"
     }, {
-        "ESP_FISICOABREV": "C102",
-        "ESP_FISICOID": 94,
-        "HORA_FIN": "13:00",
-        "NOMBRE_DOCENTE": "OSWALDO HONORIO CORDERO DOMINGUEZ",
-        "ASIGNATURA": "TIP TESIS RESTAURACION URBANA ARQUITECTONICA",
-        "COD_GRUPO": 1,
-        "DIA": 3,
-        "ESP_FISICONOMBRE": "AULA C102",
-        "HORA_INICIO": "11:00"
+        "esp_fisicoabrev": "C102",
+        "esp_fisicoid": 94,
+        "hora_fin": "13:00",
+        "nombre_docente": "OSWALDO HONORIO CORDERO DOMINGUEZ",
+        "asignatura": "TIP TESIS RESTAURACION URBANA ARQUITECTONICA",
+        "cod_grupo": 1,
+        "dia": 3,
+        "esp_fisiconombre": "AULA C102",
+        "hora_inicio": "11:00"
     }, {
-        "ESP_FISICOABREV": "B204",
-        "ESP_FISICOID": 85,
-        "HORA_FIN": "13:00",
-        "NOMBRE_DOCENTE": "OSWALDO HONORIO CORDERO DOMINGUEZ",
-        "ASIGNATURA": "TIP TESIS RESTAURACION URBANA ARQUITECTONICA",
-        "COD_GRUPO": 1,
-        "DIA": 4,
-        "ESP_FISICONOMBRE": "AULA B204",
-        "HORA_INICIO": "11:00"
+        "esp_fisicoabrev": "B204",
+        "esp_fisicoid": 85,
+        "hora_fin": "13:00",
+        "nombre_docente": "OSWALDO HONORIO CORDERO DOMINGUEZ",
+        "asignatura": "TIP TESIS RESTAURACION URBANA ARQUITECTONICA",
+        "cod_grupo": 1,
+        "dia": 4,
+        "esp_fisiconombre": "AULA B204",
+        "hora_inicio": "11:00"
     }, {
-        "ESP_FISICOABREV": "B201",
-        "ESP_FISICOID": 84,
-        "HORA_FIN": "13:00",
-        "NOMBRE_DOCENTE": "OSWALDO HONORIO CORDERO DOMINGUEZ",
-        "ASIGNATURA": "TIP TESIS RESTAURACION URBANA ARQUITECTONICA",
-        "COD_GRUPO": 1,
-        "DIA": 5,
-        "ESP_FISICONOMBRE": "AULA B201",
-        "HORA_INICIO": "11:00"
+        "esp_fisicoabrev": "B201",
+        "esp_fisicoid": 84,
+        "hora_fin": "13:00",
+        "nombre_docente": "OSWALDO HONORIO CORDERO DOMINGUEZ",
+        "asignatura": "TIP TESIS RESTAURACION URBANA ARQUITECTONICA",
+        "cod_grupo": 1,
+        "dia": 5,
+        "esp_fisiconombre": "AULA B201",
+        "hora_inicio": "11:00"
     }]
 }]
