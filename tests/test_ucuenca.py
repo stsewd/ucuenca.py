@@ -5,6 +5,8 @@ import os
 from ucuenca.ucuenca import Ucuenca
 from ucuenca.ucuenca import UcuencaException
 
+TEST_RESOURCES = os.path.join(os.path.dirname(__file__), "..", "tests_resources")
+
 
 class GetCareersTests(unittest.TestCase):
     def setUp(self):
@@ -33,10 +35,7 @@ class GetCareersTests(unittest.TestCase):
         self.assertEqual(expected_result, actual_result)
 
     def _get_careers(self):
-        path = os.path.join(
-            os.path.dirname(__file__),
-            "..", "tests_resources", "careers.json"
-        )
+        path = os.path.join(TEST_RESOURCES, "careers.json")
         with open(path) as f:
             json_file = json.load(f)
         return json_file[0]
@@ -83,10 +82,7 @@ class GetScheduleTests(unittest.TestCase):
         self.assertIsNone(result)
 
     def _get_schedule(self):
-        path = os.path.join(
-            os.path.dirname(__file__),
-            "..", "tests_resources", "schedule.json"
-        )
+        path = os.path.join(TEST_RESOURCES, "schedule.json")
         with open(path) as f:
             json_file = json.load(f)
         return json_file[0]
@@ -120,10 +116,7 @@ class GetCurriculumProgress(unittest.TestCase):
         self.assertIsNone(result)
 
     def _get_curriculum_progress(self):
-        path = os.path.join(
-            os.path.dirname(__file__),
-            "..", "tests_resources", "curriculum_progress.json"
-        )
+        path = os.path.join(TEST_RESOURCES, "curriculum_progress.json")
         with open(path) as f:
             json_file = json.load(f)
         return json_file
