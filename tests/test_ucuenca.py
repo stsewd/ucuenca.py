@@ -25,15 +25,6 @@ class GetCareersTests(unittest.TestCase):
         result = self.ucuenca.careers(student_id)
         self.assertIsNone(result)
 
-    def test_careers_lower_case_keys(self):
-        """Check 0104926787's careers with lower case keys."""
-        student_id = '0104926787'
-        expected_result = self._get_careers()
-        expected_result = {k.lower(): v for k, v in expected_result.items()}
-        self.ucuenca.lowercase_keys = True
-        actual_result = self.ucuenca.careers(student_id)
-        self.assertEqual(expected_result, actual_result)
-
     def _get_careers(self):
         path = os.path.join(TEST_RESOURCES, "careers.json")
         with open(path) as f:
@@ -130,6 +121,5 @@ class AuthenticationTests(unittest.TestCase):
         """Check authentication with a bad password."""
         user = 'santos.gallegos'
         passw = '1234'
-        self.ucuenca.lowercase_keys = True
         result = self.ucuenca.authentication(user, passw)
         self.assertFalse(result['autenticacion'])
