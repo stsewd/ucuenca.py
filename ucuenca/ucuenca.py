@@ -1,4 +1,5 @@
 import time
+import html
 import requests
 
 # TODO: html parser for status requests
@@ -21,9 +22,10 @@ class UcuencaException(Exception):
 
 
 class Ucuenca:
-    def __init__(self, token=None, lowercase_keys=False):
+    def __init__(self, token=None, lowercase_keys=True, unescape_html=True):
         self.token = token
         self.lowercase_keys = lowercase_keys
+        self.unescape_html = unescape_html
 
     def _get(self, service_name, params=None):
         url = self._get_url(service_name)
@@ -66,6 +68,11 @@ class Ucuenca:
         headers = response.headers
         if 'json' in headers['content-type']:
             result = response.json()
+            if self.unescape_html:
+                result = [
+                    self._unescape_html(r)
+                    for r in result
+                ]
             if self.lowercase_keys:
                 result = [
                     self._keys_to_lower_case(r)
@@ -74,6 +81,12 @@ class Ucuenca:
         else:
             raise UcuencaException(2, "Unknow response.")
         return result
+
+    def _unescape_html(self, dictionary):
+        return {
+            k: html.unescape(v) if isinstance(v, str) else v
+            for k, v in dictionary.items()
+        }
 
     @staticmethod
     def _keys_to_lower_case(dictionary):
