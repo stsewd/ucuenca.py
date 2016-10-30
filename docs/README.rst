@@ -6,7 +6,8 @@ ucuenca.py
 Descripción
 -----------
 
-Librería de Python para la API de la Universidad de Cuenca.
+Librería de Python para la API de la `Universidad de
+Cuenca <http://www.ucuenca.edu.ec/>`__.
 
 Dependencias
 ------------
@@ -32,6 +33,7 @@ Manual
 ::
 
     git clone https://github.com/stsewd/ucuenca.py.git
+    cd ucuenca.py
     pip install .
 
 Documentación
@@ -50,7 +52,22 @@ Inicio Rápido
     careers['malla']  # MALLA CONTABILIDAD Y AUDITORIA 2008
     careers['fecha_matricula']  # 2013-03-03 09:37:08.0
 
-.. |Build Status| image:: https://travis-ci.com/stsewd/ucuenca.py.svg?token=tZwnW7qE7enKf3J5KbrM&branch=master
-   :target: https://travis-ci.com/stsewd/ucuenca.py
+Contribuir
+----------
+
+Pull request son bienvenidos :simple\_smile:.
+
+Aviso
+-----
+
+-  Recuerda respetar la privacidad de los demás. No me hago responsable
+   por el mal uso de la librería *ucuenca.py*.
+-  La librería *ucuenca.py* es una implementación no oficial de la API
+   de la Universidad de Cuenca.
+-  La librería *ucuenca.py* es de libre distribución, está bajo la
+   licencia `MIT <LICENSE>`__
+
+.. |Build Status| image:: https://travis-ci.org/stsewd/ucuenca.py.svg?branch=master
+   :target: https://travis-ci.org/stsewd/ucuenca.py
 .. |PyPI version| image:: https://badge.fury.io/py/ucuenca.svg
    :target: https://badge.fury.io/py/ucuenca
