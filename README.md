@@ -3,7 +3,7 @@
 [![PyPI version](https://badge.fury.io/py/ucuenca.svg)](https://badge.fury.io/py/ucuenca)
 
 ## Descripción
-Librería de Python para la API de la Universidad de Cuenca.
+Librería de Python para la API de la [Universidad de Cuenca](http://www.ucuenca.edu.ec/).
 
 ## Dependencias
 -   Python 3.3 o superior.
