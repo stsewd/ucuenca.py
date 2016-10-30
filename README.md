@@ -19,6 +19,7 @@ pip install ucuenca
 ### Manual
 ```
 git clone https://github.com/stsewd/ucuenca.py.git
+cd ucuenca.py
 pip install .
 
 ```
