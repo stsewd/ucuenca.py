@@ -123,3 +123,15 @@ class Ucuenca:
             }
         )
         return None if not response else response
+
+    # Only use if you have a very good reason to do it.
+    def authentication(self, user, passw):
+        """Returns basic information about an user if the password matches."""
+        response = self._get(
+            service_name='acceso',
+            params={
+                'usuario': user,
+                'pass': passw
+            }
+        )
+        return None if not response else response[0]

@@ -120,3 +120,16 @@ class GetCurriculumProgress(unittest.TestCase):
         with open(path) as f:
             json_file = json.load(f)
         return json_file
+
+
+class AuthenticationTests(unittest.TestCase):
+    def setUp(self):
+        self.ucuenca = Ucuenca()
+
+    def test_bad_password(self):
+        """Check authentication with a bad password."""
+        user = 'santos.gallegos'
+        passw = '1234'
+        self.ucuenca.lowercase_keys = True
+        result = self.ucuenca.authentication(user, passw)
+        self.assertFalse(result['autenticacion'])
