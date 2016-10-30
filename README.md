@@ -37,7 +37,7 @@ careers['fecha_matricula']  # 2013-03-03 09:37:08.0
 ```
 
 ## Contribuir
-Pull request son bienvenidos :simple_smile:.
+Pull request son bienvenidos :snake:.
 <!-- TODO -->
 
 ## Aviso
