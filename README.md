@@ -6,14 +6,13 @@
 Librería de Python para la API de la [Universidad de Cuenca](http://www.ucuenca.edu.ec/).
 
 ## Dependencias
--   Python 3.3 o superior.
+-   Python 3.4 o superior.
 -   El paquete [requests](<http://docs.python-requests.org/en/master/user/install/>) debe estar instalado.
 
 ## Instalación
 ### Pip
 ```
 pip install ucuenca
-
 ```
 
 ### Manual
@@ -29,8 +28,7 @@ pip install .
 ```python
 from ucuenca import Ucuenca
 
-uc = Ucuenca(lowercase_keys=True)
-
+uc = Ucuenca()
 careers = uc.careers('0104926787')
 careers['malla']  # MALLA CONTABILIDAD Y AUDITORIA 2008
 careers['fecha_matricula']  # 2013-03-03 09:37:08.0
