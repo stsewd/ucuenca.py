@@ -28,9 +28,9 @@ pip install .
 ```python
 from ucuenca import Ucuenca
 
-ucue = Ucuenca(lowercase_keys=True)
+uc = Ucuenca(lowercase_keys=True)
 
-careers = ucue.careers('0104926787')
+careers = uc.careers('0104926787')
 careers['malla']  # MALLA CONTABILIDAD Y AUDITORIA 2008
 careers['fecha_matricula']  # 2013-03-03 09:37:08.0
 
