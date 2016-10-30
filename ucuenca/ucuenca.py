@@ -2,7 +2,6 @@ import time
 import html
 import requests
 
-# TODO: html parser for status requests
 
 BASE_URL = "http://evaluacion.ucuenca.edu.ec/ucuenca-rest-ws/api/v1/"
 MAX_RETRIES = 6
