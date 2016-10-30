@@ -57,10 +57,10 @@ class Ucuenca:
     def _get_response(self, url, params):
         response = requests.get(url, params)
         status_code = response.status_code
-        if status_code != 200:
+        if status_code == 404:
+            raise UcuencaException(status_code, "Resource not found.")
+        elif status_code != 200:
             raise UcuencaException(status_code, "Error")
-        elif status_code == 404:
-            raise UcuencaException(404, "Resource not found.")
         return response
 
     def _parse_response(self, response):
