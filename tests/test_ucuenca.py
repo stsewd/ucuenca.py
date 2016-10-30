@@ -88,7 +88,7 @@ class GetScheduleTests(unittest.TestCase):
         return json_file[0]
 
 
-class GetCurriculumProgress(unittest.TestCase):
+class GetCurriculumProgressTests(unittest.TestCase):
     def setUp(self):
         self.ucuenca = Ucuenca()
 
