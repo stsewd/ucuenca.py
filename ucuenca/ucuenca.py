@@ -110,3 +110,16 @@ class Ucuenca:
             params={'idEstudiante': student_id}
         )
         return None if not response else response[0]
+
+    def curriculum_progress(self, student_id, career_id, curriculum_id, career_plan):
+        """Returns the curriculum progress of a student."""
+        response = self._get(
+            service_name='registroacademico/malla',
+            params={
+                'idEstudiante': student_id,
+                'idCarrera': career_id,
+                'idMalla': curriculum_id,
+                'idPlacar': career_plan
+            }
+        )
+        return None if not response else response
