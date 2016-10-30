@@ -67,9 +67,11 @@ class Ucuenca:
         headers = response.headers
         if 'json' in headers['content-type']:
             result = response.json()
-            result = None if not result else result[0]
             if self.lowercase_keys:
-                result = self._keys_to_lower_case(result)
+                result = [
+                    self._keys_to_lower_case(r)
+                    for r in result
+                ]
         else:
             raise UcuencaException(2, "Unknow response.")
         return result
@@ -83,14 +85,15 @@ class Ucuenca:
 
     def careers(self, student_id):
         """Returns the careers that a student has taken given an id."""
-        return self._get(
+        response = self._get(
             service_name='registroacademico',
             params={'idEstudiante': student_id}
         )
+        return None if not response else response[0]
 
     def notes(self, student_id, career_id, period_id):
         """Returns the notes of a student given an id, career, and perdiod."""
-        return self._get(
+        response = self._get(
             service_name='registroacademico/notas',
             params={
                 'idEstudiante': student_id,
@@ -98,10 +101,12 @@ class Ucuenca:
                 'idPerlec': period_id
             }
         )
+        return None if not response else response[0]
 
     def schedule(self, student_id):
         """Returns the current schedule of a student given an id."""
-        return self._get(
+        response = self._get(
             service_name='horarios',
             params={'idEstudiante': student_id}
         )
+        return None if not response else response[0]
