@@ -21,7 +21,6 @@ pip install ucuenca
 git clone https://github.com/stsewd/ucuenca.py.git
 cd ucuenca.py
 pip install .
-
 ```
 
 ## Documentación
@@ -35,5 +34,13 @@ uc = Ucuenca(lowercase_keys=True)
 careers = uc.careers('0104926787')
 careers['malla']  # MALLA CONTABILIDAD Y AUDITORIA 2008
 careers['fecha_matricula']  # 2013-03-03 09:37:08.0
-
 ```
+
+## Contribuir
+Pull request son bienvenidos :simple_smile:.
+<!-- TODO -->
+
+## Aviso
+-   Recuerda respetar la privacidad de los demás. No me hago responsable por el mal uso de la librería _ucuenca.py_.
+-   La librería _ucuenca.py_ es una implementación no oficial de la API de la Universidad de Cuenca.
+-   La librería _ucuenca.py_ es de libre distribución, está bajo la licencia [MIT](LICENSE)
