@@ -11,3 +11,6 @@ doc:
 clean:
 	python3 setup.py clean --all
 	rm -f -r docs/*
+
+pypi:
+	python3 setup.py sdist upload
