@@ -1,5 +1,5 @@
 # ucuenca.py
-[![Build Status](https://travis-ci.com/stsewd/ucuenca.py.svg?token=tZwnW7qE7enKf3J5KbrM&branch=master)](https://travis-ci.com/stsewd/ucuenca.py)
+[![Build Status](https://travis-ci.org/stsewd/ucuenca.py.svg?branch=master)](https://travis-ci.org/stsewd/ucuenca.py)
 [![PyPI version](https://badge.fury.io/py/ucuenca.svg)](https://badge.fury.io/py/ucuenca)
 
 ## Descripción
