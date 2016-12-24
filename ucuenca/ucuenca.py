@@ -2,6 +2,7 @@ import time
 import html
 import requests
 
+# TODO Implement status stuff from api
 
 BASE_URL = "http://evaluacion.ucuenca.edu.ec/ucuenca-rest-ws/api/v1/"
 MAX_RETRIES = 6
@@ -16,12 +17,32 @@ class UcuencaException(Exception):
     def __str__(self):
         return "status code: {status_code} - {msg}".format(
             status_code=self.status_code,
-            msg=self.msg,
+            msg=self.msg
         )
 
 
 class Ucuenca:
     def __init__(self, token=None, lowercase_keys=True, unescape_html=True):
+        """Crea un objeto Ucuenca API.
+
+        Args:
+            token (str): Token de autorización del usuario.
+            lowercase_keys (bool): `True` si se desea convertir todas las
+                claves del objeto JSON retornado a minúsculas.
+            unescape_html (bool): `True` si se desea convertir todos los
+                caracteres html del objeto JSON a texto.
+
+        Note:
+            El atributo `token` no tiene ninguna implementación ni propósito
+            aún. Su presencia es meramente para futura implementación.
+
+            Las claves del objeto JSON original vienen en mayúscula, para una
+            mejor manipulación del JSON es recomendable convertir todas las
+            claves a minúsculas.
+
+            Algunos valores del objeto JSON original vienen con entidades html,
+            por defecto son convertidas a su representación en ascii.
+        """
         self.token = token
         self.lowercase_keys = lowercase_keys
         self.unescape_html = unescape_html
@@ -108,7 +129,12 @@ class Ucuenca:
             return element
 
     def careers(self, student_id):
-        """Returns the careers that a student has taken given an id."""
+        """Obtiene las carreras de un estudiante.
+
+        Args:
+            student_id (str): El id del estudiante, puede ser el número de
+            cédula.
+        """
         response = self._get(
             service_name='registroacademico',
             params={'idEstudiante': student_id}
@@ -116,7 +142,14 @@ class Ucuenca:
         return None if not response else response[0]
 
     def notes(self, student_id, career_id, period_id):
-        """Returns the notes of a student given an id, career, and perdiod."""
+        """Obtiene las notas de un estudiante.
+
+        Args:
+            student_id (str): El id del estudiante, puede ser el número de
+            cédula.
+            career_id (int): Id de la carrera.
+            period_id (int): Id del periodo.
+        """
         response = self._get(
             service_name='registroacademico/notas',
             params={
@@ -128,15 +161,35 @@ class Ucuenca:
         return None if not response else response[0]
 
     def schedule(self, student_id):
-        """Returns the current schedule of a student given an id."""
+        """Obtiene todos los horarios de las carreras de un estudiante.
+
+        Args:
+            student_id (str): El id del estudiante, puede ser el número de
+            cédula.
+        """
         response = self._get(
             service_name='horarios',
             params={'idEstudiante': student_id}
         )
         return None if not response else response[0]
 
-    def curriculum_progress(self, student_id, career_id, curriculum_id, career_plan):
-        """Returns the curriculum progress of a student."""
+    def curriculum_progress(
+            self, student_id, career_id,
+            curriculum_id, career_plan
+    ):
+        """Obtiene el avance de la malla curricular de un estudiante.
+
+        Args:
+            student_id (str): El id del estudiante, puede ser el número de
+            cédula.
+            career_id (int): Id de la carrera.
+            curriculum_id (int): Id del curriculum.
+            career_plan (int): Id del plan de carrera.
+
+        Note:
+            El id de carrera, curriculum y del plan de carrera pueden ser
+            obtenidos con el método `careers`.
+        """
         response = self._get(
             service_name='registroacademico/malla',
             params={
@@ -150,7 +203,18 @@ class Ucuenca:
 
     # Only use if you have a very good reason to do so.
     def authentication(self, user, passw):
-        """Returns basic information about an user if the password matches."""
+        """Obtiene información básica de un estudiante.
+
+        Args:
+            user (str): El nombre de usuario del estudiante (corresponde al
+            nombre de usuario del correo institucional).
+            passw (str): La contraseña del usuario.
+
+        Note:
+            En la documentación oficial se describe este método como una manera
+            de autenticación, por favor, no usar este método para ese propósito
+            u otro a menos que se tenga una muy buena razón para hacerlo.
+            """
         response = self._get(
             service_name='acceso',
             params={
