@@ -23,14 +23,14 @@ Instalación
 Pip
 ~~~
 
-::
+.. code:: bash
 
     pip install ucuenca
 
 Manual
 ~~~~~~
 
-::
+.. code:: bash
 
     git clone https://github.com/stsewd/ucuenca.py.git
     cd ucuenca.py
