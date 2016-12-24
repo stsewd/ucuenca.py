@@ -12,6 +12,9 @@ doc:
 clean:
 	$(PYTHON) setup.py clean --all
 	rm -f -r docs/*
+	rm -f -r dist/
+	rm -f -r *egg-info
+	rm -f -r *__pycache__*
 
 pypi:
 	$(PYTHON) setup.py sdist upload
