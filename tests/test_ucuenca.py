@@ -3,9 +3,12 @@ import json
 import os
 
 from ucuenca.ucuenca import Ucuenca
-from ucuenca.ucuenca import UcuencaException
 
-TEST_RESOURCES = os.path.join(os.path.dirname(__file__), "..", "tests_resources")
+
+TEST_RESOURCES = os.path.join(
+    os.path.dirname(__file__),
+    "..", "tests_resources"
+)
 
 
 class GetCareersTests(unittest.TestCase):

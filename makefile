@@ -15,3 +15,4 @@ clean:
 
 pypi:
 	$(PYTHON) setup.py sdist upload
+
