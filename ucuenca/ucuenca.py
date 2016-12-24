@@ -55,7 +55,7 @@ class Ucuenca:
             delay += DELAY
 
     def _get_response(self, url, params):
-        response = requests.get(url, params)
+        response = requests.get(url, params=params)
         status_code = response.status_code
         if status_code == 404:
             raise UcuencaException(status_code, "Resource not found.")
