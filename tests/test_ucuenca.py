@@ -73,13 +73,13 @@ class GetScheduleTests(unittest.TestCase):
         """Check invalid student's schedule."""
         student_id = '1234567890'
         result = self.ucuenca.schedule(student_id)
-        self.assertIsNone(result)
+        self.assertFalse(result)
 
     def _get_schedule(self):
         path = os.path.join(TEST_RESOURCES, "schedule.json")
         with open(path) as f:
             json_file = json.load(f)
-        return json_file[0]
+        return json_file
 
 
 class GetCurriculumProgressTests(unittest.TestCase):
@@ -107,7 +107,7 @@ class GetCurriculumProgressTests(unittest.TestCase):
         result = self.ucuenca.curriculum_progress(
             student_id, career_id, curriculum_id, career_plan
         )
-        self.assertIsNone(result)
+        self.assertFalse(result)
 
     def _get_curriculum_progress(self):
         path = os.path.join(TEST_RESOURCES, "curriculum_progress.json")
