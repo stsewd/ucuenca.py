@@ -55,7 +55,7 @@ class GetNotesTests(unittest.TestCase):
         career_id = 34
         perdiod_id = 115
         result = self.ucuenca.notes(student_id, career_id, perdiod_id)
-        self.assertIsNone(result)
+        self.assertFalse(result)
 
 
 class GetScheduleTests(unittest.TestCase):
