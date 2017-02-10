@@ -1,6 +1,6 @@
 PYTHON = python
 TEST_RUNNER = unittest
-TEST_FLAGS = -v
+TEST_FLAGS = discover -v
 
 
 test:

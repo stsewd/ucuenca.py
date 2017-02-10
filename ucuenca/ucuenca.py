@@ -129,7 +129,7 @@ class Ucuenca:
             return element
 
     def careers(self, student_id):
-        """Obtiene las carreras de un estudiante.
+        """Obtiene una lista de las carreras de un estudiante.
 
         Args:
             student_id (str): El id del estudiante, puede ser el número de
@@ -139,7 +139,7 @@ class Ucuenca:
             service_name='registroacademico',
             params={'idEstudiante': student_id}
         )
-        return None if not response else response[0]
+        return response
 
     def notes(self, student_id, career_id, period_id):
         """Obtiene las notas de un estudiante.
@@ -158,10 +158,10 @@ class Ucuenca:
                 'idPerlec': period_id
             }
         )
-        return None if not response else response[0]
+        return response
 
     def schedule(self, student_id):
-        """Obtiene todos los horarios de las carreras de un estudiante.
+        """Obtiene una lista de los horarios de las carreras de un estudiante.
 
         Args:
             student_id (str): El id del estudiante, puede ser el número de
@@ -171,7 +171,7 @@ class Ucuenca:
             service_name='horarios',
             params={'idEstudiante': student_id}
         )
-        return None if not response else response[0]
+        return response
 
     def curriculum_progress(
             self, student_id, career_id,
@@ -199,7 +199,7 @@ class Ucuenca:
                 'idPlacar': career_plan
             }
         )
-        return None if not response else response
+        return response
 
     # Only use if you have a very good reason to do so.
     def authentication(self, user, passw):
