@@ -26,13 +26,13 @@ class GetCareersTests(unittest.TestCase):
         """Check invalid student's careers."""
         student_id = '1234567890'
         result = self.ucuenca.careers(student_id)
-        self.assertIsNone(result)
+        self.assertFalse(result)
 
     def _get_careers(self):
         path = os.path.join(TEST_RESOURCES, "careers.json")
         with open(path) as f:
             json_file = json.load(f)
-        return json_file[0]
+        return json_file
 
 
 class GetNotesTests(unittest.TestCase):
