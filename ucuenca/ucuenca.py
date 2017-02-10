@@ -129,7 +129,7 @@ class Ucuenca:
             return element
 
     def careers(self, student_id):
-        """Obtiene las carreras de un estudiante.
+        """Obtiene una lista de las carreras de un estudiante.
 
         Args:
             student_id (str): El id del estudiante, puede ser el número de
@@ -139,7 +139,7 @@ class Ucuenca:
             service_name='registroacademico',
             params={'idEstudiante': student_id}
         )
-        return None if not response else response[0]
+        return response
 
     def notes(self, student_id, career_id, period_id):
         """Obtiene las notas de un estudiante.
