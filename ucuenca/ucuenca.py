@@ -158,7 +158,7 @@ class Ucuenca:
                 'idPerlec': period_id
             }
         )
-        return None if not response else response[0]
+        return response
 
     def schedule(self, student_id):
         """Obtiene una lista de los horarios de las carreras de un estudiante.
