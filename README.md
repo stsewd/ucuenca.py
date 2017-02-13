@@ -61,6 +61,8 @@ from ucuenca import Ucuenca
 help(Ucuenca)
 ```
 
+Adicionalmente, existen varios ejemplos del uso de la librería en el directorio [`examples`](examples/).
+
 ## Contribuir
 
 Si encuentras un error, tienes ideas de cómo mejorar el proyecto, házmelo saber creando un [issue](<https://github.com/stsewd/ucuenca.py/issues/new>).
