@@ -2,6 +2,7 @@
 
 [![Build Status](https://travis-ci.org/stsewd/ucuenca.py.svg?branch=master)](https://travis-ci.org/stsewd/ucuenca.py)
 [![PyPI version](https://badge.fury.io/py/ucuenca.svg)](https://badge.fury.io/py/ucuenca)
+[![codecov](https://codecov.io/gh/stsewd/ucuenca.py/branch/master/graph/badge.svg)](https://codecov.io/gh/stsewd/ucuenca.py)
 
 ## Descripción
 
